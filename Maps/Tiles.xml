@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="TileSet" subresource_count="7" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
-	<ext_resource path="res://Tex/Wall/SpaceStationWallDamaged0.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Tex/Wall/SpaceStationWall0.png" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://Tex/Wall/SpaceStationWall1.png" type="Texture" index="0"></ext_resource>
+	<ext_resource path="res://Texture/Wall/SpaceStationWallDamaged0.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Texture/Wall/SpaceStationWall0.png" type="Texture" index="0"></ext_resource>
+	<ext_resource path="res://Texture/Wall/SpaceStationWall1.png" type="Texture" index="1"></ext_resource>
 	<resource type="ConvexPolygonShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			0, 0, 32, 0, 32, 32, 0, 32 </vector2_array>

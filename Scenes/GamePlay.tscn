@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Script/PlayerMotion.gd" type="Script" id=1]
-[ext_resource path="res://Tex/Wall/SpaceStationWall0.png" type="Texture" id=2]
-[ext_resource path="res://Tex/Player/Player0.png" type="Texture" id=3]
-[ext_resource path="res://Tex/Player/Player1.png" type="Texture" id=4]
+[ext_resource path="res://Texture/Player/Player0.png" type="Texture" id=2]
+[ext_resource path="res://Texture/Player/Player1.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -13,10 +12,10 @@ extents = Vector2( 16.3268, 10.3327 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "PlayerA",
-"speed": 20.0
+"name": "playerA",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -27,11 +26,6 @@ extents = Vector2( 6.88367, 4.57907 )
 [node name="Node2D" type="Node2D"]
 
 script/script = ExtResource( 1 )
-
-[node name="SpaceStationWall0" type="Sprite" parent="."]
-
-transform/pos = Vector2( 338.979, 0.487198 )
-texture = ExtResource( 2 )
 
 [node name="player" type="RigidBody2D" parent="."]
 
@@ -89,8 +83,7 @@ drag_margin/bottom = 0.2
 
 transform/pos = Vector2( 0.380917, 0.198411 )
 frames = SubResource( 2 )
-animation = "PlayerA"
-frame = 1
+animation = "playerA"
 playing = true
 offset = Vector2( 0, -0.5 )
 

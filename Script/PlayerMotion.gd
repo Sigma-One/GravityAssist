@@ -63,6 +63,7 @@ func _fixed_process(delta):
 		mapPos += 64 * 4
 	
 	
+	
 	for i in range(mapHolder.get_child_count()):
 		if(mapHolder.get_child(i).get_pos().x < playerPosition.x - 500):
 			mapHolder.get_child(i).queue_free()
