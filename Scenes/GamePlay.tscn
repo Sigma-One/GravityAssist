@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16.3268, 10.3327 )
+extents = Vector2( 15.4664, 6.45475 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -21,7 +21,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.88367, 4.57907 )
+extents = Vector2( 14.3731, 2.52634 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -36,7 +36,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 2
-mass = 6687.25
+mass = 0.00240205
 friction = 1.0
 bounce = 0.0
 gravity_scale = 1.0
@@ -93,7 +93,7 @@ transform/pos = Vector2( 22.6934, -0.01087 )
 transform/scale = Vector2( 0.29083, 0.237912 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( -0.69294, 0, 0, 4.20324, -24.1889, 0.843796 )
+shapes/0/transform = Matrix32( -0.69294, 0, 0, 4.20324, -33.5045, 0.986139 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -102,7 +102,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/playerFront"]
 
-transform/pos = Vector2( -24.1889, 0.843796 )
+transform/pos = Vector2( -33.5045, 0.986139 )
 transform/scale = Vector2( -0.69294, 4.20324 )
 shape = SubResource( 3 )
 trigger = true

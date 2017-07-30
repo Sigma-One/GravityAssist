@@ -11,6 +11,24 @@ var timer
 var mapPos = 0
 var mapHolder
 var playerFront
+var maps = Array()
+
+func list_files_in_directory(path):
+	var files = []
+	var dir = Directory.new()
+	dir.open(path)
+	dir.list_dir_begin()
+	
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with(".") and file.ends_with(".tscn"):
+			files.append(file)
+	
+	dir.list_dir_end()
+
+	return files
 
 
 func _ready():
@@ -51,10 +69,13 @@ func _fixed_process(delta):
 	
 	######################################################
 	
-	var scene = load("res://Maps/Map1.tscn")
 	var cameraPosition = get_node("player/camera").get_pos()
 	
-	mapPiece = (scene.instance())
+	maps.append("res://Maps/Map0.tscn")
+	maps.append("res://Maps/Map1.tscn")
+	maps.append("res://Maps/Map2.tscn")
+	
+	mapPiece = (load(maps[randi() % maps.size()]).instance())
 	
 	mapPiece.set_pos(Vector2(mapPos, 0))
 	
@@ -63,9 +84,8 @@ func _fixed_process(delta):
 		mapPos += 64 * 4
 	
 	
-	
 	for i in range(mapHolder.get_child_count()):
 		if(mapHolder.get_child(i).get_pos().x < playerPosition.x - 500):
 			mapHolder.get_child(i).queue_free()
-
-
+	
+	

@@ -61,16 +61,16 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( -131076, 0, -131075, 0, -131074, 1, -131073, 0, -196608, 0, -196607, 1, -196606, 0, -196605, 0, 65536, 1073741828, 65537, 1073741827, 65538, -2147483644, 196604, 1073741824, 196605, 1073741824, 196606, 1073741825, 196607, 1073741824, 131072, 1073741824, 131073, 1073741825, 131074, 1073741824, 131075, 1073741824 )
+tile_data = IntArray( -131076, 0, -131075, 0, -131074, 1, -131073, 0, -196608, 0, -196607, 1, -196606, 0, -196605, 0, 131071, -1610612732, 65536, -2147483644, 196604, 1073741824, 196605, 1073741824, 196606, 1073741825, 196607, 1073741824, 131072, 1073741824, 131073, 1073741825, 131074, 1073741824, 131075, 1073741824 )
 
 [node name="Obstacle" type="Node2D" parent="."]
 
 [node name="Obstacle0" type="AnimatedSprite" parent="Obstacle"]
 
-transform/pos = Vector2( -16, -56 )
+transform/pos = Vector2( -80, -56 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 script/script = ExtResource( 5 )
 
@@ -94,10 +94,10 @@ trigger = true
 
 [node name="Obstacle1" type="AnimatedSprite" parent="Obstacle"]
 
-transform/pos = Vector2( 16, -56 )
+transform/pos = Vector2( 80, -56 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 script/script = ExtResource( 5 )
 
@@ -121,9 +121,10 @@ trigger = true
 
 [node name="Obstacle2" type="AnimatedSprite" parent="Obstacle"]
 
-transform/pos = Vector2( -78, 54 )
+transform/pos = Vector2( -2, 21 )
 frames = SubResource( 4 )
 animation = "default"
+frame = 3
 playing = true
 script/script = ExtResource( 5 )
 
