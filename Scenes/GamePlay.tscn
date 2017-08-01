@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Script/PlayerMotion.gd" type="Script" id=1]
 [ext_resource path="res://Texture/Player/Player0.png" type="Texture" id=2]
 [ext_resource path="res://Texture/Player/Player1.png" type="Texture" id=3]
+[ext_resource path="res://Texture/Background/Space.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -84,7 +85,6 @@ drag_margin/bottom = 0.2
 transform/pos = Vector2( 0.380917, 0.198411 )
 frames = SubResource( 2 )
 animation = "playerA"
-frame = 1
 playing = true
 offset = Vector2( 0, -0.5 )
 
@@ -108,6 +108,14 @@ transform/scale = Vector2( -0.69294, 4.20324 )
 shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
+
+[node name="Space" type="Sprite" parent="player"]
+
+transform/pos = Vector2( 86.5518, 0.142123 )
+z/z = -2
+texture = ExtResource( 4 )
+region = true
+region_rect = Rect2( 0, 0, 1536, 512 )
 
 [node name="mapHolder" type="Node2D" parent="."]
 
