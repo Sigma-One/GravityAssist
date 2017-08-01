@@ -7,35 +7,22 @@ var gravityFlipped = false
 var screenSize = OS.get_window_size()
 var mapPart = Array()
 var mapPiece
+var backgroundPiece
 var timer
 var mapPos = 0
+var backgroundPos = 0
 var mapHolder
 var playerFront
 var maps = Array()
+var backgrounds = Array()
 
-func list_files_in_directory(path):
-	var files = []
-	var dir = Directory.new()
-	dir.open(path)
-	dir.list_dir_begin()
-	
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif not file.begins_with(".") and file.ends_with(".tscn"):
-			files.append(file)
-	
-	dir.list_dir_end()
-
-	return files
 
 
 func _ready():
 	# Called every time the node is added to the scene.
 	set_fixed_process(true)
 	set_process_input(true)
-	mapHolder = get_node("Node2D")
+	mapHolder = get_node("mapHolder")
 	playerFront = get_node("player/playerFront")
 
 
@@ -56,11 +43,11 @@ func _input(flipGravity):
 		#motionVector = Vector2(speed, -gravity)
 
 func _fixed_process(delta):
-	var playerPosition = get_node("player").get_pos()
-	playerPosition += motionVector * delta
+	global.playerPosition = get_node("player").get_pos()
+	global.playerPosition += motionVector * delta
 	
 	
-	get_node("player").set_pos(playerPosition)
+	get_node("player").set_pos(global.playerPosition)
 	
 	speed += 0.01
 	
@@ -74,18 +61,29 @@ func _fixed_process(delta):
 	maps.append("res://Maps/Map0.tscn")
 	maps.append("res://Maps/Map1.tscn")
 	maps.append("res://Maps/Map2.tscn")
+	maps.append("res://Maps/MapTest.tscn")
+	
+	backgrounds.append("res://Background/Background0.tscn")
 	
 	mapPiece = (load(maps[randi() % maps.size()]).instance())
 	
 	mapPiece.set_pos(Vector2(mapPos, 0))
 	
-	if mapPiece.get_pos().x < playerPosition.x + 800:
+	backgroundPiece = (load(backgrounds[randi() % backgrounds.size()]).instance())
+	
+	backgroundPiece.set_pos(Vector2(backgroundPos, 0))
+	
+	if mapPiece.get_pos().x < global.playerPosition.x + 800:
 		mapHolder.add_child(mapPiece)
 		mapPos += 64 * 4
+		
+	
+	if backgroundPiece.get_pos().x < global.playerPosition.x + 800:
+		mapHolder.add_child(backgroundPiece)
+		backgroundPos += 128
 	
 	
 	for i in range(mapHolder.get_child_count()):
-		if(mapHolder.get_child(i).get_pos().x < playerPosition.x - 500):
+		if(mapHolder.get_child(i).get_pos().x < global.playerPosition.x - 500):
 			mapHolder.get_child(i).queue_free()
-	
 	
