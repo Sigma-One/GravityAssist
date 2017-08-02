@@ -26,16 +26,16 @@ func _ready():
 	playerFront = get_node("player/playerFront")
 
 
-func _input(flipGravity):
+func _input(event):
 	
-	if Input.is_action_pressed("flipGravity") and gravityFlipped == true:
+	if Input.is_action_pressed("flipGravity") and gravityFlipped == true or event.type == InputEvent.SCREEN_TOUCH and gravityFlipped == true:
 		motionVector.y = 0
 		gravityFlipped = false;
 		get_node("player/playerSprite").set_flip_v(false)
 		get_node("player").set_gravity_scale(gravity)
 		#motionVector = Vector2(speed, gravity)
 	
-	elif Input.is_action_pressed("flipGravity") and gravityFlipped == false:
+	elif Input.is_action_pressed("flipGravity") and gravityFlipped == false or event.type == InputEvent.SCREEN_TOUCH and gravityFlipped == false:
 		motionVector.y = 0
 		gravityFlipped = true;
 		get_node("player/playerSprite").set_flip_v(true)
@@ -50,9 +50,11 @@ func _fixed_process(delta):
 	get_node("player").set_pos(global.playerPosition)
 	
 	speed += 0.01
+	global.score += 1
+	print(global.score)
 	
 	if playerFront.get_overlapping_bodies().size() > 1:
-		get_tree().reload_current_scene()
+		death.death()
 	
 	######################################################
 	

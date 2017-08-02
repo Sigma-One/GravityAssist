@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Script/PlayerMotion.gd" type="Script" id=1]
 [ext_resource path="res://Texture/Player/Player0.png" type="Texture" id=2]
 [ext_resource path="res://Texture/Player/Player1.png" type="Texture" id=3]
-[ext_resource path="res://Texture/Background/Space.png" type="Texture" id=4]
+[ext_resource path="res://Script/Camera.gd" type="Script" id=4]
+[ext_resource path="res://Texture/Background/Space.png" type="Texture" id=5]
+[ext_resource path="res://Script/spaceBackground.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -59,27 +61,6 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="camera" type="Camera2D" parent="player"]
-
-transform/pos = Vector2( 0.0387001, 0.189879 )
-offset = Vector2( -150, -140 )
-anchor_mode = 0
-rotating = false
-current = true
-zoom = Vector2( 0.25, 0.25 )
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-drag_margin/h_enabled = true
-drag_margin/v_enabled = true
-smoothing/enable = false
-smoothing/speed = 5.0
-drag_margin/left = 0.2
-drag_margin/top = 0.2
-drag_margin/right = 0.2
-drag_margin/bottom = 0.2
-
 [node name="playerSprite" type="AnimatedSprite" parent="player"]
 
 transform/pos = Vector2( 0.380917, 0.198411 )
@@ -109,14 +90,76 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Space" type="Sprite" parent="player"]
+[node name="camera" type="Camera2D" parent="player"]
 
-transform/pos = Vector2( 86.5518, 0.142123 )
-z/z = -2
-texture = ExtResource( 4 )
-region = true
-region_rect = Rect2( 0, 0, 1536, 512 )
+transform/pos = Vector2( 0.0387, 0 )
+offset = Vector2( 50, 0 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.25, 0.25 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = false
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 1.0
+drag_margin/right = 0.2
+drag_margin/bottom = 1.0
+script/script = ExtResource( 4 )
 
 [node name="mapHolder" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+z/z = -1
+polygon = Vector2Array( 600, 65, -600, 65, -600, 300, 600, 300 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = ExtResource( 5 )
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+script/script = ExtResource( 6 )
+
+[node name="Polygon2D1" type="Polygon2D" parent="."]
+
+z/z = -1
+polygon = Vector2Array( 600, -65, -600, -65, -600, -300, 600, -300 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = ExtResource( 5 )
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+script/script = ExtResource( 6 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+
+z/z = -3
+polygon = Vector2Array( 600, -65, -600, -65, -600, 65, 600, 65 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = ExtResource( 5 )
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+script/script = ExtResource( 6 )
 
 
