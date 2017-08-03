@@ -15,6 +15,7 @@ var mapHolder
 var playerFront
 var maps = Array()
 var backgrounds = Array()
+var HUD
 
 
 
@@ -50,7 +51,6 @@ func _fixed_process(delta):
 	get_node("player").set_pos(global.playerPosition)
 	
 	speed += 0.01
-	global.score += 1
 	print(global.score)
 	
 	if playerFront.get_overlapping_bodies().size() > 1:
@@ -58,7 +58,6 @@ func _fixed_process(delta):
 	
 	######################################################
 	
-	var cameraPosition = get_node("player/camera").get_pos()
 	
 	maps.append("res://Maps/Map0.tscn")
 	maps.append("res://Maps/Map1.tscn")

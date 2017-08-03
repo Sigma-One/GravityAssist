@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Script/PlayerMotion.gd" type="Script" id=1]
 [ext_resource path="res://Texture/Player/Player0.png" type="Texture" id=2]
 [ext_resource path="res://Texture/Player/Player1.png" type="Texture" id=3]
 [ext_resource path="res://Script/Camera.gd" type="Script" id=4]
-[ext_resource path="res://Texture/Background/Space.png" type="Texture" id=5]
-[ext_resource path="res://Script/spaceBackground.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Texture/Background/Space.png" type="Texture" id=6]
+[ext_resource path="res://Script/spaceBackground.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -113,6 +114,13 @@ drag_margin/right = 0.2
 drag_margin/bottom = 1.0
 script/script = ExtResource( 4 )
 
+[node name="Control" parent="player" instance=ExtResource( 5 )]
+
+margin/left = 212.0
+margin/top = -128.0
+margin/right = 281.0
+margin/bottom = -112.0
+
 [node name="mapHolder" type="Node2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -123,13 +131,13 @@ uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 5 )
+texture/texture = ExtResource( 6 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Polygon2D1" type="Polygon2D" parent="."]
 
@@ -139,13 +147,13 @@ uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 5 )
+texture/texture = ExtResource( 6 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 
@@ -155,12 +163,12 @@ uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 5 )
+texture/texture = ExtResource( 6 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 
