@@ -169,3 +169,4 @@ invert/border = 100.0
 script/script = ExtResource( 7 )
 
 
+[editable path="player/Control"]

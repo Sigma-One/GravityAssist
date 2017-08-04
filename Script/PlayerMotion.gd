@@ -2,7 +2,7 @@ extends Node2D
 
 var speed = 150
 var gravity = 5
-var motionVector = Vector2(speed, gravity)
+var motionVector = Vector2(speed, 2)
 var gravityFlipped = false
 var screenSize = OS.get_window_size()
 var mapPart = Array()
@@ -16,7 +16,7 @@ var playerFront
 var maps = Array()
 var backgrounds = Array()
 var HUD
-
+var scoreCounterDelay = 0
 
 
 func _ready():
@@ -25,6 +25,12 @@ func _ready():
 	set_process_input(true)
 	mapHolder = get_node("mapHolder")
 	playerFront = get_node("player/playerFront")
+	maps.append("res://Maps/Map0.tscn")
+	maps.append("res://Maps/Map1.tscn")
+	maps.append("res://Maps/Map2.tscn")
+	maps.append("res://Maps/MapTest.tscn")
+	var mapStart = "res://Maps/MapTest.tscn"
+	mapPiece = (load(mapStart).instance())
 
 
 func _input(event):
@@ -59,14 +65,7 @@ func _fixed_process(delta):
 	######################################################
 	
 	
-	maps.append("res://Maps/Map0.tscn")
-	maps.append("res://Maps/Map1.tscn")
-	maps.append("res://Maps/Map2.tscn")
-	maps.append("res://Maps/MapTest.tscn")
-	
 	backgrounds.append("res://Background/Background0.tscn")
-	
-	mapPiece = (load(maps[randi() % maps.size()]).instance())
 	
 	mapPiece.set_pos(Vector2(mapPos, 0))
 	
@@ -87,3 +86,12 @@ func _fixed_process(delta):
 	for i in range(mapHolder.get_child_count()):
 		if(mapHolder.get_child(i).get_pos().x < global.playerPosition.x - 500):
 			mapHolder.get_child(i).queue_free()
+	
+	mapPiece = (load(maps[randi() % maps.size()]).instance())
+	
+###########################################################################################################
+
+	scoreCounterDelay += 1
+	if scoreCounterDelay == 5:
+		global.score +=1
+		scoreCounterDelay = 0
