@@ -41,4 +41,19 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="HighScoreText" type="Label" parent="CanvasLayer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = SubResource( 1 )
+margin/left = 0.0
+margin/top = 48.0
+margin/right = 282.0
+margin/bottom = 108.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 

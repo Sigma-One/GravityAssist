@@ -67,6 +67,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 0.380917, 0.198411 )
 frames = SubResource( 2 )
 animation = "playerA"
+frame = 1
 playing = true
 offset = Vector2( 0, -0.5 )
 
@@ -115,10 +116,7 @@ script/script = ExtResource( 4 )
 
 [node name="Control" parent="player" instance=ExtResource( 5 )]
 
-margin/left = 212.0
-margin/top = -128.0
-margin/right = 281.0
-margin/bottom = -112.0
+process/pause_mode = 2
 
 [node name="mapHolder" type="Node2D" parent="."]
 
@@ -142,7 +140,7 @@ script/script = ExtResource( 7 )
 
 z/z = -1
 polygon = Vector2Array( 600, -65, -600, -65, -600, -300, 600, -300 )
-uv = Vector2Array(  )
+uv = Vector2Array( 600, -65, -600, -65, -600, -300, 600, -300 )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )

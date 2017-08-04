@@ -51,7 +51,7 @@ func _fixed_process(delta):
 	get_node("player").set_pos(global.playerPosition)
 	
 	speed += 0.01
-	print(global.score)
+	#print(global.score)
 	
 	if playerFront.get_overlapping_bodies().size() > 1:
 		death.death()
