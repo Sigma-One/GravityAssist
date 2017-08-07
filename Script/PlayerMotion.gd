@@ -1,6 +1,7 @@
 extends Node2D
 
-var speed = 150
+
+var speed = 200
 var gravity = 5
 var motionVector = Vector2(speed, 2)
 var gravityFlipped = false
@@ -21,6 +22,7 @@ var scoreCounterDelay = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
+	print("test!")
 	set_fixed_process(true)
 	set_process_input(true)
 	mapHolder = get_node("mapHolder")

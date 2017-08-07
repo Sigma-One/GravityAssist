@@ -23,4 +23,5 @@ func _process(delta):
 	highScore = Load("game", "highScore")
 	
 func _ready():
+	print("testing again")
 	set_process(true)
