@@ -7,8 +7,9 @@ func death():
 	else:
 		global.Save("game", "highScore", global.score)
 	
-	global.score = 0
 	get_tree().get_root().get_node("Node2D/player").hide()
 	get_tree().get_root().get_node("Node2D/player/Control/CanvasLayer/GameOverScreen").show()
+	get_tree().get_root().get_node("Node2D/player/Control/CanvasLayer/ScoreText").hide()
+	get_tree().get_root().get_node("Node2D/player/Control/CanvasLayer/HighScoreText").hide()
 	get_tree().set_pause(true)
 	

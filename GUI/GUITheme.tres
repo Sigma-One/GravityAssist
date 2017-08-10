@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=8 format=1]
+[gd_resource type="Theme" load_steps=10 format=1]
 
-[ext_resource path="res://Font/HighScore.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Texture/Gui/WindowHover.png" type="Texture" id=2]
-[ext_resource path="res://Texture/Gui/Window.png" type="Texture" id=3]
-[ext_resource path="res://Texture/Gui/WindowPressed.png" type="Texture" id=4]
+[ext_resource path="res://Texture/Gui/WindowHover.png" type="Texture" id=1]
+[ext_resource path="res://Texture/Gui/Window.png" type="Texture" id=2]
+[ext_resource path="res://Texture/Gui/WindowPressed.png" type="Texture" id=3]
+[ext_resource path="res://Font/HighScore.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Font/HighScoreSmall.tres" type="DynamicFont" id=5]
+[ext_resource path="res://GUI/WindowStyleBox.tres" type="StyleBox" id=6]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -11,7 +13,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 margin/left = 12.0
 margin/right = 12.0
 margin/top = 12.0
@@ -28,7 +30,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 margin/left = 12.0
 margin/right = 12.0
 margin/top = 12.0
@@ -45,7 +47,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 margin/left = 12.0
 margin/right = 12.0
 margin/top = 12.0
@@ -58,16 +60,21 @@ draw_center = true
 
 [resource]
 
-default_font = ExtResource( 1 )
+default_font = ExtResource( 4 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 0.699451 )
 Button/colors/font_color_hover = Color( 0.15625, 0.15625, 0.15625, 1 )
 Button/colors/font_color_pressed = Color( 0.390625, 0.390625, 0.390625, 1 )
 Button/constants/hseparation = 2
-Button/fonts/font = ExtResource( 1 )
+Button/fonts/font = null
 Button/styles/disabled = null
 Button/styles/focus = null
 Button/styles/hover = SubResource( 1 )
 Button/styles/normal = SubResource( 2 )
 Button/styles/pressed = SubResource( 3 )
+Fonts/fonts/large = ExtResource( 4 )
+Fonts/fonts/normal = ExtResource( 5 )
+Panel/styles/panel = ExtResource( 6 )
+Panel/styles/panelf = ExtResource( 6 )
+Panel/styles/panelnc = ExtResource( 6 )
 

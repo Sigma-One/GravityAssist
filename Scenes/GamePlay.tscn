@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://Script/PlayerMotion.gd" type="Script" id=1]
+[ext_resource path="res://Script/Main.gd" type="Script" id=1]
 [ext_resource path="res://Texture/Player/Player0.png" type="Texture" id=2]
 [ext_resource path="res://Texture/Player/Player1.png" type="Texture" id=3]
 [ext_resource path="res://Script/Camera.gd" type="Script" id=4]
@@ -67,6 +67,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 0.380917, 0.198411 )
 frames = SubResource( 2 )
 animation = "playerA"
+frame = 1
 playing = true
 offset = Vector2( 0, -0.5 )
 
@@ -129,7 +130,7 @@ vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = ExtResource( 6 )
 texture/offset = Vector2( 0, 0 )
-texture/scale = Vector2( 1, 1 )
+texture/scale = Vector2( 2, 2 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
@@ -145,7 +146,7 @@ vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = ExtResource( 6 )
 texture/offset = Vector2( 0, 0 )
-texture/scale = Vector2( 1, 1 )
+texture/scale = Vector2( 2, 2 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
@@ -161,7 +162,7 @@ vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = ExtResource( 6 )
 texture/offset = Vector2( 0, 0 )
-texture/scale = Vector2( 1, 1 )
+texture/scale = Vector2( 2, 2 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
