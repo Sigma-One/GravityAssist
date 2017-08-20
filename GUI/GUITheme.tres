@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=1]
+[gd_resource type="Theme" load_steps=12 format=1]
 
 [ext_resource path="res://Texture/Gui/WindowHover.png" type="Texture" id=1]
 [ext_resource path="res://Texture/Gui/Window.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Font/HighScore.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Font/HighScoreSmall.tres" type="DynamicFont" id=5]
 [ext_resource path="res://GUI/WindowStyleBox.tres" type="StyleBox" id=6]
+[ext_resource path="res://GUI/WindowHoverStyleBox.tres" type="StyleBox" id=7]
+[ext_resource path="res://GUI/WindowPressedStyleBox.tres" type="StyleBox" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -74,6 +76,22 @@ Button/styles/normal = SubResource( 2 )
 Button/styles/pressed = SubResource( 3 )
 Fonts/fonts/large = ExtResource( 4 )
 Fonts/fonts/normal = ExtResource( 5 )
+Icons/icons/close = null
+Icons/icons/logo = null
+ItemList/colors/font_color = Color( 0, 0, 0, 1 )
+ItemList/colors/font_color_selected = Color( 0, 0, 0, 1 )
+ItemList/colors/guide_color = Color( 0, 0, 0, 0.1 )
+ItemList/constants/hseparation = 4
+ItemList/constants/icon_margin = 4
+ItemList/constants/line_separation = 2
+ItemList/constants/vseparation = 2
+ItemList/fonts/font = null
+ItemList/styles/bg = ExtResource( 6 )
+ItemList/styles/bg_focus = ExtResource( 6 )
+ItemList/styles/cursor = null
+ItemList/styles/cursor_unfocused = null
+ItemList/styles/selected = ExtResource( 7 )
+ItemList/styles/selected_focus = ExtResource( 8 )
 Panel/styles/panel = ExtResource( 6 )
 Panel/styles/panelf = ExtResource( 6 )
 Panel/styles/panelnc = ExtResource( 6 )

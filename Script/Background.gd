@@ -1,5 +1,7 @@
 extends Node2D
 
+#Simple script that adjusts the background position in relation to the player's position.
+
 func _ready():
 	set_process(true)
 

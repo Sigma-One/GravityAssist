@@ -1,28 +1,17 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Script/Main.gd" type="Script" id=1]
-[ext_resource path="res://Texture/Player/Player0.png" type="Texture" id=2]
-[ext_resource path="res://Texture/Player/Player1.png" type="Texture" id=3]
-[ext_resource path="res://Script/Camera.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Texture/Background/Space.png" type="Texture" id=6]
-[ext_resource path="res://Script/spaceBackground.gd" type="Script" id=7]
+[ext_resource path="res://Texture/Player/Player3.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Texture/Background/Space.png" type="Texture" id=4]
+[ext_resource path="res://Script/spaceBackground.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 15.4664, 6.45475 )
 
-[sub_resource type="SpriteFrames" id=2]
-
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "playerA",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 14.3731, 2.52634 )
@@ -64,10 +53,8 @@ _update_shape_index = 0
 
 [node name="playerSprite" type="AnimatedSprite" parent="player"]
 
-transform/pos = Vector2( 0.380917, 0.198411 )
-frames = SubResource( 2 )
-animation = "playerA"
-frame = 1
+frames = ExtResource( 2 )
+animation = "default"
 playing = true
 offset = Vector2( 0, -0.5 )
 
@@ -76,7 +63,7 @@ offset = Vector2( 0, -0.5 )
 transform/pos = Vector2( 22.6934, -0.01087 )
 transform/scale = Vector2( 0.29083, 0.237912 )
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( -0.69294, 0, 0, 4.20324, -33.5045, 0.986139 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -88,7 +75,7 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -33.5045, 0.986139 )
 transform/scale = Vector2( -0.69294, 4.20324 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 0
 
@@ -112,9 +99,8 @@ drag_margin/left = 0.2
 drag_margin/top = 1.0
 drag_margin/right = 0.2
 drag_margin/bottom = 1.0
-script/script = ExtResource( 4 )
 
-[node name="Control" parent="player" instance=ExtResource( 5 )]
+[node name="Control" parent="player" instance=ExtResource( 3 )]
 
 process/pause_mode = 2
 
@@ -128,13 +114,13 @@ uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 6 )
+texture/texture = ExtResource( 4 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 2, 2 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-script/script = ExtResource( 7 )
+script/script = ExtResource( 5 )
 
 [node name="Polygon2D1" type="Polygon2D" parent="."]
 
@@ -144,13 +130,13 @@ uv = Vector2Array( 600, -65, -600, -65, -600, -300, 600, -300 )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 6 )
+texture/texture = ExtResource( 4 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 2, 2 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-script/script = ExtResource( 7 )
+script/script = ExtResource( 5 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 
@@ -160,13 +146,13 @@ uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
-texture/texture = ExtResource( 6 )
+texture/texture = ExtResource( 4 )
 texture/offset = Vector2( 0, 0 )
 texture/scale = Vector2( 2, 2 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-script/script = ExtResource( 7 )
+script/script = ExtResource( 5 )
 
 
 [editable path="player/Control"]
