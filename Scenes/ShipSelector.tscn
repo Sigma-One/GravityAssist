@@ -2,7 +2,7 @@
 
 [ext_resource path="res://GUI/GUITheme.tres" type="Theme" id=1]
 [ext_resource path="res://Script/ShipSelector.gd" type="Script" id=2]
-[ext_resource path="res://Texture/Player/Player0.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Ships/Player0.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Texture/Background/Space.png" type="Texture" id=4]
 
 [node name="Control" type="Control"]
@@ -31,7 +31,6 @@ transform/pos = Vector2( 960, 500 )
 transform/scale = Vector2( 20, 20 )
 frames = ExtResource( 3 )
 animation = "default"
-frame = 1
 playing = true
 
 [node name="Right" type="Button" parent="CanvasLayer"]

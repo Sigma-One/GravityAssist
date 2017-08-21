@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Script/Main.gd" type="Script" id=1]
-[ext_resource path="res://Texture/Player/Player3.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Ships/Player3.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Texture/Background/Space.png" type="Texture" id=4]
 [ext_resource path="res://Script/spaceBackground.gd" type="Script" id=5]

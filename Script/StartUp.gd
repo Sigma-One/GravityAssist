@@ -4,21 +4,30 @@ extends Node
 
 func _ready():
 	
+	#Load maps
 	global.maps = LoadFiles("res://Maps/", "scn")
-	#global.backgrounds += LoadFiles("user://Mods/Maps/", "tscn")
+	global.maps += LoadFiles("user://Mods/Maps/", "scn")
+	global.maps += LoadFiles("res://Maps/", "tscn")
+	global.maps += LoadFiles("user://Mods/Maps/", "tscn")
 	print(global.maps)
 	
-	global.backgrounds = LoadFiles("res://Background/", "scn")
-	#global.backgrounds += LoadFiles("user://Mods/Backgrounds/", "tscn")
+	#Load backgrounds
+	global.backgrounds = LoadFiles("res://Backgrounds/", "scn")
+	global.backgrounds += LoadFiles("user://Mods/Backgrounds/", "scn")
+	global.backgrounds += LoadFiles("res://Backgrounds/", "tscn")
+	global.backgrounds += LoadFiles("user://Mods/Backgrounds/", "tscn")
 	print(global.backgrounds)
-
-	global.ships = LoadFiles("res://Texture/Player/", "tres")
-	#global.ships += LoadFiles("user://Mods/Ships/", "tres")
+	
+	#Load ships
+	global.ships = LoadFiles("res://Ships/", "tres")
+	global.ships += LoadFiles("user://Mods/Ships/", "tres")
+	print(global.ships)
+	
+	#Make sure a ship is selected
 	if not global.Load("game", "ship") == null:
 		global.selectedShip = global.ships[global.Load("game", "ship")]
 	else:
 		global.selectedShip = global.ships[0]
-	print(global.ships)
 
 func LoadFiles(path, extension):
 	var toLoad = []

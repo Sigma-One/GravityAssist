@@ -82,5 +82,6 @@ func Menu():
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 func Pause():
-	get_tree().set_pause(true)
-	get_node("CanvasLayer/PauseScreen").show()
+	if not get_tree().is_paused():
+		get_tree().set_pause(true)
+		get_node("CanvasLayer/PauseScreen").show()
