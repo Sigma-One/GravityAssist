@@ -68,6 +68,8 @@ func Restart():
 func Resume():
 	get_tree().set_pause(false)
 	get_node("CanvasLayer/PauseScreen").hide()
+	get_node("CanvasLayer/ScoreText").show()
+	get_node("CanvasLayer/HighScoreText").show()
 
 #Ran if quit is pressed.
 func Quit():
@@ -86,5 +88,7 @@ func Menu():
 
 func Pause():
 	if not get_tree().is_paused():
+		get_node("CanvasLayer/ScoreText").hide()
+		get_node("CanvasLayer/HighScoreText").hide()
 		get_tree().set_pause(true)
 		get_node("CanvasLayer/PauseScreen").show()
