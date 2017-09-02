@@ -7,7 +7,7 @@ var cameraPosition
 var score = 0
 var saveFile = ConfigFile.new()
 var savePath = "user://save.cfg"
-var highScore
+var highScore = Load("game", "highScore")
 var ships = []
 var maps
 var backgrounds
@@ -29,10 +29,6 @@ func Load(section, entry):
 	if saveFile.load(savePath) == 0:
 		var data = saveFile.get_value(section, entry)
 		return data
-
-#Just constantly loads the high score. Temp thingy.
-func _process(delta):
-	highScore = Load("game", "highScore")
 	
 #Ran when the file is loaded.
 func _ready():

@@ -14,6 +14,7 @@ var backgroundPiece
 var mapHolder
 var mapPos = 0
 var backgroundPos = 0
+var startMaps = 0
 
 #Initialization stuff mostly.
 func _ready():
@@ -32,7 +33,9 @@ func _ready():
 	
 	#Set player spriteFrames to selected ship.
 	get_node("player/playerSprite").set_sprite_frames(global.selectedShip)
-
+	
+	get_node("player").set_pos(Vector2(get_node("player").get_pos().x + 200, 0))
+	
 #Input handling.
 func _input(event):
 
@@ -72,7 +75,12 @@ func _fixed_process(delta):
 	
 	backgroundPiece.set_pos(Vector2(backgroundPos, 0))
 	
-	mapPiece = global.maps[randi() % global.maps.size()].instance()
+	if startMaps <= 2:
+		mapPiece = global.maps[0].instance()
+		startMaps += 1
+	
+	else:
+		mapPiece = global.maps[randi() % global.maps.size()].instance()
 	
 	mapPiece.set_pos(Vector2(mapPos, 0))
 	

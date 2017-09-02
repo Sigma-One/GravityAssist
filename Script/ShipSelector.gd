@@ -12,8 +12,8 @@ func _ready():
 		selection = 0
 	#Position stuff.
 	get_node("CanvasLayer/Ship").set_pos(Vector2(OS.get_screen_size().x / 2, OS.get_screen_size().y / 2))
-	get_node("CanvasLayer/Right").set_pos(Vector2(OS.get_screen_size().x / 1.5, OS.get_screen_size().y / 2 - get_node("CanvasLayer/Right").get_size().y / 2))
-	get_node("CanvasLayer/Left").set_pos(Vector2(OS.get_screen_size().x / 3.5, OS.get_screen_size().y / 2 - get_node("CanvasLayer/Left").get_size().y / 2))
+	get_node("CanvasLayer/Right").set_pos(Vector2(get_node("CanvasLayer/Ship").get_pos().x * 1.6, OS.get_screen_size().y / 2 - get_node("CanvasLayer/Right").get_size().y / 2))
+	get_node("CanvasLayer/Left").set_pos(Vector2(get_node("CanvasLayer/Ship").get_pos().x * 0.4 - get_node("CanvasLayer/Left").get_size().x, OS.get_screen_size().y / 2 - get_node("CanvasLayer/Left").get_size().y / 2))
 	get_node("CanvasLayer/Back").set_pos(Vector2(OS.get_screen_size().x / 2 - get_node("CanvasLayer/Back").get_size().x / 2, OS.get_screen_size().y / 1.3))
 	
 	
